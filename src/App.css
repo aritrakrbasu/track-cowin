@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body
 {
   background-image: url("./img/bf.png");
@@ -5,6 +6,7 @@ body
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top right;
+  font-family: 'Poppins', sans-serif !important;
 }
 .btn-primary
 {
@@ -273,29 +275,27 @@ input
 {
   color:#000 !important
 }
-
-@media all and (max-width: 480px) { 
-  .row
-  {
-    height:auto !important
-  }
-  .illustration
-  {
-    max-width: 70% !important;
-  }
-  .notify
-  {
-    position: relative !important;
-    margin-top: 30px !important;
-  }
-  body
-  {
-    background-position: top right;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px)
-and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) and (orientation:portrait)
+.unsubscribe
 {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  width:70%;
+  margin: 0px auto;
+  text-align: center;
+}
+.unsubscribe img
+{
+  max-width:50px;
+}
+.unsubscribe h1
+{
+  font-size: 20px !important;
+}
+@media all and (max-width: 480px) { 
   .row
   {
     height:auto !important

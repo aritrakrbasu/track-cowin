@@ -3,8 +3,10 @@ import { useEffect } from 'react'
 import { db } from './firebase'
 function CheckVaccine() {
 
-    useEffect(() => {
+    
 
+    function checkavalability () {
+        console.log("yo")
         const today = `${new Date().getDate()}-0${
             new Date().getMonth() + 1
           }-${new Date().getFullYear()}`;
@@ -41,8 +43,8 @@ function CheckVaccine() {
 
             }
         })
-    }, [])
-
+    }
+    // setInterval(checkavalability(), 60000);
 
     function SendMail(availableCenters,name,email)
     {
@@ -76,7 +78,7 @@ function CheckVaccine() {
         <br><br>
         <p><strong><span style="color: #e03e2d;">Note: This websites sends you an automated email whenever their is a availability of vaccine in your area . We use COWIN Api and is not atall an official website for covid vaccine registration . You can book your appointment for covid vaccine by registering at </span> <a href="https://www.cowin.gov.in/home" target="_blank" rel="noopener">COWIN</a></strong></p>
         <br>
-        <p><strong>If you want to stop getting notifications <a href="https://www.cowin.gov.in/home" target="_blank" rel="noopener">click here</a> . </strong></p>
+        <p><strong>If you want to stop getting notifications <a href="https://track-cowin.firebaseapp.com/unsubscribe/${email}" target="_blank" rel="noopener">click here</a> . </strong></p>
         `;
         window.Email.send({
             SecureToken  : "8d75da15-c063-43cb-be1a-dc1759e6bf49",

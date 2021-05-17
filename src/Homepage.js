@@ -140,7 +140,7 @@ function Homepage() {
           name="district" 
           placeholder="Choose your District"
           autoComplete="off"
-          disabled={!districtList}
+          disabled={!(districtList.length>0)}
           onChange={(val)=>setselectedDistrict(val)}
           required
           />
@@ -153,7 +153,7 @@ function Homepage() {
         </Col>
         
      </Row>
-     <div className="col-lg-12 notify">Note: This websites sends you an automated email whenever their is a availability of vaccine in your area . We use COWIN Api and is not atall an official website for covid vaccine registration . You can book your appointment for covid vaccine by registering at <a href="https://www.cowin.gov.in/home" target="_blank" rel="noopener">COWIN</a></div>
+     <div className="col-lg-12 notify">Note: This websites sends you an automated email whenever their is a availability of vaccine in your area . We use COWIN Api and is not atall an official website for covid vaccine registration . You can book your appointment for covid vaccine by registering at <a href="https://www.cowin.gov.in/home" target="_blank" rel="noreferrer noopener">COWIN</a></div>
    </Container>
     )
 }
