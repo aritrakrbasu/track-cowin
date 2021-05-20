@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { db , arrayval} from './firebase'
+import { db } from './firebase'
 import github_icon from './img/github.png'
 function Unsubscribe() {
     const {email} = useParams()
