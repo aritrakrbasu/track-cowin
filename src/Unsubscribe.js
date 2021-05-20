@@ -5,6 +5,7 @@ import github_icon from './img/github.png'
 function Unsubscribe() {
     const {email} = useParams()
     const [success, setSuccess]=useState()
+
     useEffect(()=>{
         db.collection("userData").doc("userData").get().then((docs)=>{
             if(docs.exists)
@@ -20,7 +21,6 @@ function Unsubscribe() {
                 setSuccess(true)
             }
         })
-        
     },[email])
 
     return (
