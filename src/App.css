@@ -295,6 +295,10 @@ input
 {
   font-size: 20px !important;
 }
+form
+{
+    max-width: 300px;
+}
 @media all and (max-width: 480px) { 
   .row
   {

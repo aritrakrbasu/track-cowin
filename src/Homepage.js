@@ -17,6 +17,7 @@ function Homepage() {
   
     const nameRef =useRef()
     const emailRef =useRef()
+    const pincodeRef =useRef()
     
   
     function getDistrictList(option)
@@ -64,7 +65,8 @@ function Homepage() {
                 name:nameRef.current.value,
                 email:emailRef.current.value,
                 district:selectedDistrict,
-                state:selectedState
+                state:selectedState,
+                pincode:pincodeRef.current.value
             })
             
           }).then(()=>{
@@ -107,7 +109,7 @@ function Homepage() {
         </Col>
         <Col lg={{span:6,order:1}} md={{span:6,order:2}} className="d-flex flex-column align-items-center justify-content-center" >
         <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicPassword">
+          <Form.Group controlId="formBasicPassword">
             <Form.Label>Name</Form.Label>
             <Form.Control type="text" placeholder="Your Name" ref={nameRef} required />
           </Form.Group>
@@ -144,6 +146,11 @@ function Homepage() {
           onChange={(val)=>setselectedDistrict(val)}
           required
           />
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Pincode </Form.Label>
+            <Form.Control type="text" placeholder="pincode" ref={pincodeRef} required />
+            <Form.Text className="text-muted">Leave it blank to get update of your district .</Form.Text>
+          </Form.Group>
           <Button disabled={loading} variant="primary" type="submit" className="w-100">
             {loading ? (<Spinner animation="border" />):("Send Me updates")}
           </Button>

@@ -12,7 +12,6 @@ function Unsubscribe() {
             {
                 var list = docs.data().list
                 var newlist = list.filter(listitem=>listitem.email!==email)
-                console.log(newlist)
                 db.collection("userData").doc("userData").update({
                     list:newlist
                 }).then(()=>setSuccess(true))
