@@ -148,7 +148,7 @@ function Homepage() {
           />
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Pincode </Form.Label>
-            <Form.Control type="text" placeholder="pincode" ref={pincodeRef} required />
+            <Form.Control type="text" placeholder="pincode" ref={pincodeRef}/>
             <Form.Text className="text-muted">Leave it blank to get update of your district .</Form.Text>
           </Form.Group>
           <Button disabled={loading} variant="primary" type="submit" className="w-100">

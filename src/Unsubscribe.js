@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { db } from './firebase'
+import { db,arrayval } from './firebase'
 import github_icon from './img/github.png'
 function Unsubscribe() {
     const {email} = useParams()
@@ -11,9 +11,12 @@ function Unsubscribe() {
             if(docs.exists)
             {
                 var list = docs.data().list
-                var newlist = list.filter(listitem=>listitem.email!==email)
+                var unsubscribed = list.filter(listitem=>listitem.email===email)
+                db.collection("userData").doc("unsubscribedUserData").update({
+                    list:arrayval.arrayUnion(unsubscribed[0])
+                })
                 db.collection("userData").doc("userData").update({
-                    list:newlist
+                    list:arrayval.arrayRemove(unsubscribed[0])
                 }).then(()=>setSuccess(true))
             }else
             {
